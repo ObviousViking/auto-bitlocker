@@ -1,18 +1,6 @@
 # auto-bitlocker
 Script that will quickly auto apply bitlocker to a drive/removable storage
 
-
-
-╔═══════════════════════════════════════════════════════════════════════════════════════════════╗
-║                                                                                               ║
-║                                     AutoBitlocker                                             ║
-║                                       Version 1                                               ║
-║                                                                                               ║
-║                              Script to Auto-Bitlocker Drives                                  ║
-║                                                                                               ║
-╚═══════════════════════════════════════════════════════════════════════════════════════════════╝
-
-
 *******How to Install*******
 
 Right click the AutoBitlocker-Installer.ps1 and Run with Powershell. 
