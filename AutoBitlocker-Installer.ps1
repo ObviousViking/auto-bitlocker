@@ -10,7 +10,7 @@ function Show-Menu {
     Write-Host @("
 ╔═══════════════════════════════════════════════════════════════════════════════════════════════╗
 ║                                                                                               ║
-║                            JJR TOOLS - AutoBitlocker Installer                                ║
+║                                  AutoBitlocker Installer                                      ║
 ║                                       Version 1                                               ║
 ║                                  Last Update: 30/08/2022                                      ║
 ║                                                                                               ║
@@ -51,21 +51,21 @@ do
     Write-Host "`nCreating local folder..."
     Start-Sleep -s 2
     # Creates the script folder in the root of C:
-    New-Item -Path "C:\" -Name "_JJR-TOOLS" -ItemType "directory" -force
+    New-Item -Path "C:\" -Name "USEFUL_TOOLS" -ItemType "directory" -force
     Start-Sleep -s 2
     Write-Host "`nLocal folder created."
     Start-Sleep -s 2
     Write-Host "`nCopying required files..."
     Start-Sleep -s 2
     # Copies the script and reg files to the above folder
-    Copy-Item -Path .\ -Destination "C:\_JJR-TOOLS\" -Force -Recurse
+    Copy-Item -Path .\ -Destination "C:\USEFUL_TOOLS\" -Force -Recurse
     Start-Sleep -s 2
     Write-Host "`nFile copy complete."
     Start-Sleep -s 2
     Write-Host "`nAdding registry key..."
     Start-Sleep -s 2
     # Adds the registry key that has been copied. This will enable the right click option to the local machine
-    regedit /s 'C:\_JJR-TOOLS\Auto-Bitlocker\Files\Add AutoBitlocker.reg'
+    regedit /s 'C:\USEFUL_TOOLS\Auto-Bitlocker\Files\Add AutoBitlocker.reg'
     Start-Sleep -s 2
     Write-Host "`nRegistry key added."
     Start-Sleep -s 2
@@ -80,14 +80,14 @@ do
     Write-Host "`nRemoving registry key..."
     Start-Sleep -s 2
     # Removes the registry key that was copied locally during install. Removes the right click option on the local machine
-    regedit /s 'C:\_JJR-TOOLS\Auto-Bitlocker\Files\Remove AutoBitlocker.reg'
+    regedit /s 'C:\USEFUL_TOOLS\Auto-Bitlocker\Files\Remove AutoBitlocker.reg'
     Start-Sleep -s 2
     Write-Host "`nRegistry key removed."
     Start-Sleep -s 2
     Write-Host "`nRemoving Auto-Bitlocker folder..."
     Start-Sleep -s 2
     # Removes the temp folder in root of C: including any remaining files within
-    Remove-Item -LiteralPath "C:\_JJR-TOOLS\Auto-Bitlocker" -Force -Recurse
+    Remove-Item -LiteralPath "C:\USEFUL_TOOLS\Auto-Bitlocker" -Force -Recurse
     Start-Sleep -s 2
     # Lets user know the script has finished running. Will loop back for them to quit
     Write-Host "`n`nRemove complete.`n`nYou should no longer see the AutoBitlocker option the context menu of drives."
