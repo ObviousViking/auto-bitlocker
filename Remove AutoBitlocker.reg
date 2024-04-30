@@ -3,4 +3,4 @@ Windows Registry Editor Version 5.00
 [-HKEY_CLASSES_ROOT\Drive\shell\Auto-Bitlocker]
 
 [-HKEY_CLASSES_ROOT\Drive\shell\Auto-Bitlocker\command]
-@="powershell.exe -File \"C:\\_JJR-TOOLS\\Auto-Bitlocker\\AutoBitlocker.ps1\" Set-Location -literalPath '%V'"
+@="powershell.exe -File \"C:\\USEFUL_TOOLS\\Auto-Bitlocker\\AutoBitlocker.ps1\" Set-Location -literalPath '%V'"
