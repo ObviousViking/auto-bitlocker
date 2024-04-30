@@ -18,10 +18,10 @@ $driveletter = $driveletter.trim("'"," ",":","\")
 if ((Test-Admin) -eq $false)  {
     if ($elevated) {
         # tried to elevate, did not work, aborting
-        $driveletter | Out-File -FilePath 'C:\_JJR-TOOLS\Auto-Bitlocker\Files\_ExternalVariables\SystemDefined\driverletter.txt'
+        $driveletter | Out-File -FilePath 'C:\USEFUL_TOOLS\Auto-Bitlocker\Files\_ExternalVariables\SystemDefined\driverletter.txt'
         sleep 1
     } else {
-        $driveletter | Out-File -FilePath 'C:\_JJR-TOOLS\Auto-Bitlocker\Files\_ExternalVariables\SystemDefined\driverletter.txt'
+        $driveletter | Out-File -FilePath 'C:\USEFUL_TOOLS\Auto-Bitlocker\Files\_ExternalVariables\SystemDefined\driverletter.txt'
         sleep 1
         Start-Process powershell.exe -Verb RunAs -ArgumentList ('-noprofile -noexit -file "{0}" -elevated' -f ($myinvocation.MyCommand.Definition))
     }
@@ -31,7 +31,7 @@ if ((Test-Admin) -eq $false)  {
 clear-host
 
 # Loads drive letter from external variable file
-$driveletter = Get-Content -Path 'C:\_JJR-TOOLS\Auto-Bitlocker\Files\_ExternalVariables\SystemDefined\driverletter.txt'
+$driveletter = Get-Content -Path 'C:\USEFUL_TOOLS\Auto-Bitlocker\Files\_ExternalVariables\SystemDefined\driverletter.txt'
 # Gets the label for the USB in order to check if licence dongle
 $label = Get-Volume $driveletter | select -ExpandProperty FileSystemLabel
 
@@ -47,7 +47,7 @@ Set-Location -Path "$dir"
 Write-Host @("
 ╔═══════════════════════════════════════════════════════════════════════════════════════════════╗
 ║                                                                                               ║
-║                                   JJR TOOLS - AutoBitlocker                                   ║
+║                                        AutoBitlocker                                          ║
 ║                                          Version 1.2                                          ║
 ║                                    Last Update: 05/09/2022                                    ║
 ║                                                                                               ║
@@ -182,42 +182,3 @@ Read-Host -Prompt "`nScript complete, press ENTER to quit..."
 ######################################################################################################################################################################################################################################################################################################################################################################################
 ######################################################################################################################################################################################################################################################################################################################################################################################
 ######################################################################################################################################################################################################################################################################################################################################################################################
-
-
-##################################
-#                                #
-#             To Do              #
-#                                #
-##################################
-
-
-
-
-
-##################################
-#                                #
-#           Change Log           #
-#                                #
-##################################
-#
-#
-#
-#
-# 0.1 - Initial script inception.
-# 0.2 - Accept the input from right click
-# 0.3 - Added drive letter to the variable file if script needs recalling
-# 0.4 - Format the USB
-# 0.5 - Enable Bitlocker on the USB with defined password
-#
-# 1.0 - Added in random password generation
-#
-# 1.1 - Added check to stop it running against C or D drive (OS & RAID)
-#     - Added check for volume labels, will stop license dongles being encrypted
-#
-# 1.2 - Reordered script to fix the red 'param' text on launch
-#
-#
-#
-#
-#
-#
